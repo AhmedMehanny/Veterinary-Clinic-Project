@@ -119,11 +119,39 @@ namespace VetClinicApp
             try
             {
                 dgvOwners.DataSource = _ownerMgr.GetAllOwners();
+                RenameOwnerColumns();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void RenameOwnerColumns()
+        {
+            if (dgvOwners.Columns.Count == 0) return;
+
+            // Hide the ID column (optional — remove this line to keep it visible)
+            if (dgvOwners.Columns["OWNERID"] != null)
+                dgvOwners.Columns["OWNERID"].Visible = false;
+
+            if (dgvOwners.Columns["OFRISTNAME"] != null)
+                dgvOwners.Columns["OFRISTNAME"].HeaderText = "First Name";
+
+            if (dgvOwners.Columns["OLASTNAME"] != null)
+                dgvOwners.Columns["OLASTNAME"].HeaderText = "Last Name";
+
+            if (dgvOwners.Columns["OPHONE"] != null)
+                dgvOwners.Columns["OPHONE"].HeaderText = "Phone";
+
+            if (dgvOwners.Columns["OEMAIL"] != null)
+                dgvOwners.Columns["OEMAIL"].HeaderText = "Email";
+
+            if (dgvOwners.Columns["BILLINGADDRESS"] != null)
+                dgvOwners.Columns["BILLINGADDRESS"].HeaderText = "Billing Address";
+
+            if (dgvOwners.Columns["EMERGENCYCONTACT"] != null)
+                dgvOwners.Columns["EMERGENCYCONTACT"].HeaderText = "Emergency Contact";
         }
 
         private void ClearOwnerFields()
@@ -275,11 +303,38 @@ namespace VetClinicApp
             try
             {
                 dgvPets.DataSource = _petMgr.GetPetsWithOwners();
+                RenamesPetColumns();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void RenamesPetColumns()
+        {
+            if (dgvPets.Columns.Count == 0) return;
+
+            if (dgvPets.Columns["PETID"] != null)
+                dgvPets.Columns["PETID"].Visible = false;
+
+            if (dgvPets.Columns["OWNERID"] != null)
+                dgvPets.Columns["OWNERID"].Visible = false;
+
+            if (dgvPets.Columns["PETNAME"] != null)
+                dgvPets.Columns["PETNAME"].HeaderText = "Pet Name";
+
+            if (dgvPets.Columns["SPECIES"] != null)
+                dgvPets.Columns["SPECIES"].HeaderText = "Species";
+
+            if (dgvPets.Columns["BREED"] != null)
+                dgvPets.Columns["BREED"].HeaderText = "Breed";
+
+            if (dgvPets.Columns["AGE"] != null)
+                dgvPets.Columns["AGE"].HeaderText = "Age";
+
+            if (dgvPets.Columns["OwnerName"] != null)
+                dgvPets.Columns["OwnerName"].HeaderText = "Owner";
         }
 
         private void LoadOwnerCombo()
@@ -442,11 +497,45 @@ namespace VetClinicApp
             try
             {
                 dgvVisits.DataSource = _visitMgr.GetVisitsWithDetails();
+                RenameVisitColumns();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void RenameVisitColumns()
+        {
+            if (dgvVisits.Columns.Count == 0) return;
+
+            // Hide ID columns
+            if (dgvVisits.Columns["VISITID"] != null)
+                dgvVisits.Columns["VISITID"].Visible = false;
+
+            if (dgvVisits.Columns["VISITDATE"] != null)
+                dgvVisits.Columns["VISITDATE"].HeaderText = "Visit Date";
+
+            if (dgvVisits.Columns["VISITSTATUS"] != null)
+                dgvVisits.Columns["VISITSTATUS"].HeaderText = "Status";
+
+            if (dgvVisits.Columns["PETNAME"] != null)
+                dgvVisits.Columns["PETNAME"].HeaderText = "Pet Name";
+
+            if (dgvVisits.Columns["SPECIES"] != null)
+                dgvVisits.Columns["SPECIES"].HeaderText = "Species";
+
+            if (dgvVisits.Columns["VetName"] != null)
+                dgvVisits.Columns["VetName"].HeaderText = "Veterinarian";
+
+            if (dgvVisits.Columns["CLINICNAME"] != null)
+                dgvVisits.Columns["CLINICNAME"].HeaderText = "Clinic";
+
+            if (dgvVisits.Columns["SLOTDATETIME"] != null)
+                dgvVisits.Columns["SLOTDATETIME"].HeaderText = "Slot Date & Time";
+
+            if (dgvVisits.Columns["DURATIONMINUTES"] != null)
+                dgvVisits.Columns["DURATIONMINUTES"].HeaderText = "Duration (min)";
         }
 
         private void LoadVisitCombos()
@@ -627,11 +716,42 @@ namespace VetClinicApp
             try
             {
                 dgvVaccinations.DataSource = _vacMgr.GetAllVaccinations();
+                RenameVaccinationColumns();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Database Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void RenameVaccinationColumns()
+        {
+            if (dgvVaccinations.Columns.Count == 0) return;
+
+            // Hide ID columns
+            if (dgvVaccinations.Columns["VACCINATIONID"] != null)
+                dgvVaccinations.Columns["VACCINATIONID"].Visible = false;
+
+            if (dgvVaccinations.Columns["VISITID"] != null)
+                dgvVaccinations.Columns["VISITID"].Visible = false;
+
+            if (dgvVaccinations.Columns["INVENTORYID"] != null)
+                dgvVaccinations.Columns["INVENTORYID"].Visible = false;
+
+            if (dgvVaccinations.Columns["VACCINETYPE"] != null)
+                dgvVaccinations.Columns["VACCINETYPE"].HeaderText = "Vaccine Type";
+
+            if (dgvVaccinations.Columns["ADMINISTEREDDATE"] != null)
+                dgvVaccinations.Columns["ADMINISTEREDDATE"].HeaderText = "Date Administered";
+
+            if (dgvVaccinations.Columns["NEXTBOOSTERDUE"] != null)
+                dgvVaccinations.Columns["NEXTBOOSTERDUE"].HeaderText = "Next Booster Due";
+
+            if (dgvVaccinations.Columns["PETNAME"] != null)
+                dgvVaccinations.Columns["PETNAME"].HeaderText = "Pet Name";
+
+            if (dgvVaccinations.Columns["VACCINEINVENTORYTYPE"] != null)
+                dgvVaccinations.Columns["VACCINEINVENTORYTYPE"].HeaderText = "Inventory Type";
         }
 
         private void LoadVaccinationCombos()
