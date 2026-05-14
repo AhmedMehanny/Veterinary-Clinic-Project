@@ -8,8 +8,8 @@ namespace Models
 {
     public class Pet
     {
-        // Primary key
-        public int PetId { get; set; }
+        
+        public int PetId { get; set; }  // PK
 
         // Pet information
         public string PetName { get; set; }
@@ -17,7 +17,7 @@ namespace Models
         public string Breed { get; set; }
         public int Age { get; set; }
 
-        // Foreign key
+        // Foreign key to link owner with his pets
         public int OwnerId { get; set; }
 
         // Optional: Owner information (for JOIN queries)

@@ -8,11 +8,12 @@ namespace Models
 {
     public class Visit
     {
-        // Primary key
-        public int VisitId { get; set; }
+        
+        public int VisitId { get; set; } // PK
 
         // Foreign keys
         public int PetId { get; set; }
+        public int ownerId { get; set; }
         public int SlotId { get; set; }
         public int NoteId { get; set; }
 
@@ -36,7 +37,7 @@ namespace Models
         public string OwnerFullName => $"{OwnerFirstName} {OwnerLastName}".Trim();
 
         // ============================================================
-        // Veterinarian information (from JOIN)
+        // Vet information (from JOIN)
         // ============================================================
         public string VetFirstName { get; set; }
         public string VetLastName { get; set; }

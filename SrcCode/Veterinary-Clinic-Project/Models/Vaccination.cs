@@ -14,6 +14,7 @@ namespace Models
         // Foreign keys
         public int VisitId { get; set; }
         public int InventoryId { get; set; }
+        public int PetId { get; set; }
 
         // Vaccination information
         public string VaccineType { get; set; }
@@ -23,7 +24,7 @@ namespace Models
         // ============================================================
         // Pet information (from JOIN)
         // ============================================================
-        public int PetId { get; set; }
+        public int ownerId { get; set; }
         public string PetName { get; set; }
         public string Species { get; set; }
 

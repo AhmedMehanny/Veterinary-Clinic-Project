@@ -29,7 +29,7 @@ namespace PresentationLayer.Properties
 
         private static global::System.Globalization.CultureInfo resourceCulture;
 
-        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoownerIdUncalledPrivateCode")]
         internal Resources()
         {
         }
@@ -52,7 +52,7 @@ namespace PresentationLayer.Properties
         }
 
         /// <summary>
-        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   OverrownerIdes the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]

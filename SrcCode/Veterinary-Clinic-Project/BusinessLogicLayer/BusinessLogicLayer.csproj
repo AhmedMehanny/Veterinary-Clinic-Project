@@ -41,11 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppointmentSlotManager.cs" />
+    <Compile Include="ClinicalNoteManager.cs" />
+    <Compile Include="ClinicManager.cs" />
     <Compile Include="OwnerManager.cs" />
     <Compile Include="PetManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReminderManager.cs" />
     <Compile Include="ReportManager.cs" />
     <Compile Include="VaccinationManager.cs" />
+    <Compile Include="VaccineInventoryManager.cs" />
+    <Compile Include="VetManager.cs" />
     <Compile Include="VisitManager.cs" />
   </ItemGroup>
   <ItemGroup>

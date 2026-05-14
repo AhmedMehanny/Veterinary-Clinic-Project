@@ -32,14 +32,23 @@
             // 
             // UC_Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "UC_Dashboard";
-            this.Load += new System.EventHandler(this.UC_Dashboard_Load);
+            this.Size = new System.Drawing.Size(1020, 588);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Panel panelTotalVisits;
+        private System.Windows.Forms.Label lblTotalVisits;
+        private System.Windows.Forms.Label lblTotalVisitsCaption;
+        private System.Windows.Forms.Panel panelOverdueBoosters;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblOverdueBoosters;
+        private System.Windows.Forms.Panel panelTotalClinics;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblTotalClinics;
     }
 }

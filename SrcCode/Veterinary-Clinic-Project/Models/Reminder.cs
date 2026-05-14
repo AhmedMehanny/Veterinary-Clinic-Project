@@ -4,7 +4,7 @@ namespace Models
 {
     public class Reminder
     {
-        public int ReminderId { get; set; }
+        public int ReminderId { get; set; }        
         public int OwnerId { get; set; }
         public int VaccinationId { get; set; }
         public DateTime ScheduledDate { get; set; }

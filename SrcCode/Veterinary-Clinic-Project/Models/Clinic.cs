@@ -22,9 +22,9 @@ namespace Models
         public string EmergencyStatus => HasEmergencyFacility ? "Yes" : "No";
 
         // ============================================================
-        // Veterinarian information (from JOIN with VET_CLINIC)
+        // Vet information (from JOIN with VET_CLINIC)
         // ============================================================
-        public int? VetId { get; set; }
+        public int? VetownerId { get; set; }
         public string VetFirstName { get; set; }
         public string VetLastName { get; set; }
         public string VetSpecialty { get; set; }

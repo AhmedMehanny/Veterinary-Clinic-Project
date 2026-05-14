@@ -1,27 +1,15 @@
-using System;
+﻿using System.Configuration;
 using System.Data.SqlClient;
 
 namespace DataAccessLayer
 {
-    public class DBConnection
+    public static class DBConnection
     {
-        private string GetconnectionString()
+        public static string ConnectionString => ConfigurationManager.ConnectionStrings["VetClinic"].ConnectionString; //دخلت عملت refernce system.configration
+
+        public static SqlConnection GetConnection()
         {
-            return "Data Source=DESKTOP-187HKL2;Initial Catalog=VetClinic;Integrated Security=True;";
-            
-        }
-        public SqlConnection GetConnection()
-        {
-            try
-            {
-                SqlConnection connection = new SqlConnection(GetconnectionString());
-                connection.Open();
-                return connection;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Database connection failed: " + ex.Message, ex);
-            }
+            return new SqlConnection(ConnectionString);
         }
     }
 }
